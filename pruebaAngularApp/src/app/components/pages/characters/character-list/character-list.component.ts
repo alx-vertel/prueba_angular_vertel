@@ -27,7 +27,7 @@ export class CharacterListComponent implements OnInit {
       .getCharacters(this.query, this.page)
       .pipe(take(1))
       .subscribe((res: any) => {
-        if (res.results.lenght) {
+        if (res.results.length) {
           console.log('Res -->' + res);
           const { info, results } = res;
           this.characters = [...this.characters, ...results];
