@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let character of characters">
+    <div class="card">
+      <div class="image">
+        <a [routerLink]="['/character-detail', character.id]">
+          <img
+            [src]="character.image"
+            [alt]="character.name"
+            class="card-img-top"
+          />
+        </a>
+      </div>
+      <div class="card-inner">
+        <div class="header">
+          <h2>{{ character.name }}</h2>
+          <h4 class="text-muted">{{ character.status }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-xs-12 col-sm-12 col-md-12 container-notFound"
+    *ngIf="characters.length <= 0"
+  >
+    <p>No results...</p>
+  </div>
+  <button class="btn btn-dark">Go up</button>
+</div>
