@@ -2,13 +2,13 @@
   <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let location of locations">
     <div class="card">
       <a
-        [routerLink]="['/character-detail', location.id]"
+        [routerLink]="['/location-detail', location.id]"
         style="text-decoration: none"
       >
         <div class="card-inner">
           <div class="header">
             <h2 style="color: black">{{ location.name | slice : 0 : 17 }}</h2>
-            <h4 class="text-muted">{{ location.dimension }}</h4>
+            <h4 class="text-muted">{{ location.type }}</h4>
           </div>
         </div>
       </a>
