@@ -26,8 +26,20 @@ const routes: Routes = [
         './components/pages/characters/character-detail/character-detail.module'
       ).then((m) => m.CharacterDetailModule),
   },
-  { path: 'location-detail', loadChildren: () => import('./components/pages/locations/location-detail/location-detail.module').then(m => m.LocationDetailModule) },
-  { path: 'location-list', loadChildren: () => import('./components/pages/locations/location-list/location-list.module').then(m => m.LocationListModule) },
+  {
+    path: 'location-detail/:id',
+    loadChildren: () =>
+      import(
+        './components/pages/locations/location-detail/location-detail.module'
+      ).then((m) => m.LocationDetailModule),
+  },
+  {
+    path: 'location-list',
+    loadChildren: () =>
+      import(
+        './components/pages/locations/location-list/location-list.module'
+      ).then((m) => m.LocationListModule),
+  },
 ];
 
 @NgModule({

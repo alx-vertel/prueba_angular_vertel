@@ -1,1 +1,24 @@
-<p>location-list works!</p>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let location of locations">
+    <div class="card">
+      <a
+        [routerLink]="['/character-detail', location.id]"
+        style="text-decoration: none"
+      >
+        <div class="card-inner">
+          <div class="header">
+            <h2 style="color: black">{{ location.name | slice : 0 : 17 }}</h2>
+            <h4 class="text-muted">{{ location.dimension }}</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div
+    class="col-xs-12 col-sm-12 col-md-12 container-notFound"
+    *ngIf="locations.length <= 0"
+  >
+    <p>No results...</p>
+  </div>
+  <button class="btn btn-dark">Go up</button>
+</div>
