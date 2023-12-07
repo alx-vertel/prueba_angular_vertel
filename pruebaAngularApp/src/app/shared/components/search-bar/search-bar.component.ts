@@ -10,7 +10,6 @@ export class SearchBarComponent {
   constructor(private router: Router) {}
 
   onSearch(searchValue: string) {
-    console.log(searchValue);
     if (searchValue && searchValue.length > 3) {
       this.router.navigate(['/character-list'], {
         queryParams: { value: searchValue },
