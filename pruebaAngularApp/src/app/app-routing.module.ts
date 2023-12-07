@@ -40,6 +40,20 @@ const routes: Routes = [
         './components/pages/locations/location-list/location-list.module'
       ).then((m) => m.LocationListModule),
   },
+  {
+    path: 'episode-list',
+    loadChildren: () =>
+      import(
+        './components/pages/episodes/episode-list/episode-list.module'
+      ).then((m) => m.EpisodeListModule),
+  },
+  {
+    path: 'episode-detail/:id',
+    loadChildren: () =>
+      import(
+        './components/pages/episodes/episode-detail/episode-detail.module'
+      ).then((m) => m.EpisodeDetailModule),
+  },
 ];
 
 @NgModule({

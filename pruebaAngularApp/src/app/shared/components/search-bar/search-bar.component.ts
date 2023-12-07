@@ -15,13 +15,21 @@ export class SearchBarComponent {
     if (
       searchValue &&
       searchValue.length > 3 &&
-      !currentRoute.includes('/location-list')
+      currentRoute.includes('/location-list')
     ) {
-      this.router.navigate(['/character-list'], {
+      this.router.navigate(['/location-list'], {
+        queryParams: { value: searchValue },
+      });
+    } else if (
+      searchValue &&
+      searchValue.length > 3 &&
+      currentRoute.includes('/episode-list')
+    ) {
+      this.router.navigate(['/episode-list'], {
         queryParams: { value: searchValue },
       });
     } else if (searchValue && searchValue.length > 3) {
-      this.router.navigate(['/location-list'], {
+      this.router.navigate(['/character-list'], {
         queryParams: { value: searchValue },
       });
     }

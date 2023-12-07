@@ -19,10 +19,12 @@
     </div>
   </div>
   <div
-    class="col-xs-12 col-sm-12 col-md-12 container-notFound"
+    class="col-xs-12 col-sm-12 col-md-12 container-notFound text-center"
     *ngIf="characters.length <= 0"
   >
-    <p>No results...</p>
+    <div class="alert alert-warning" role="alert">
+      <strong>No results found.</strong> Try refining your search or explore
+      other options.
+    </div>
   </div>
-  <button class="btn btn-dark">Go up</button>
 </div>

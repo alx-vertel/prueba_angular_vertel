@@ -15,14 +15,14 @@ export class LocationDetailComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private characterService: LocationService,
+    private locationService: LocationService,
     private loc: Location
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const id = params['id'];
-      this.location = this.characterService.getLocationDetail(id);
+      this.location = this.locationService.getLocationDetail(id);
     });
   }
 
